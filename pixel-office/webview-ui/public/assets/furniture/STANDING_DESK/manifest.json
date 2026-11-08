@@ -1,0 +1,44 @@
+{
+  "id": "STANDING_DESK",
+  "name": "Standing desk",
+  "category": "desks",
+  "type": "group",
+  "groupType": "rotation",
+  "rotationScheme": "3-way-mirror",
+  "canPlaceOnWalls": false,
+  "canPlaceOnSurfaces": false,
+  "backgroundTiles": 1,
+  "members": [
+    {
+      "type": "asset",
+      "id": "STANDING_DESK",
+      "file": "STANDING_DESK.png",
+      "width": 32,
+      "height": 32,
+      "footprintW": 2,
+      "footprintH": 2,
+      "orientation": "front"
+    },
+    {
+      "type": "asset",
+      "id": "STANDING_DESK_BACK",
+      "file": "STANDING_DESK_BACK.png",
+      "width": 32,
+      "height": 32,
+      "footprintW": 2,
+      "footprintH": 2,
+      "orientation": "back"
+    },
+    {
+      "type": "asset",
+      "id": "STANDING_DESK_SIDE",
+      "file": "STANDING_DESK_SIDE.png",
+      "width": 32,
+      "height": 32,
+      "footprintW": 2,
+      "footprintH": 2,
+      "orientation": "side",
+      "mirrorSide": true
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "PRINTER",
+  "name": "Printer",
+  "category": "electronics",
+  "type": "group",
+  "groupType": "rotation",
+  "rotationScheme": "3-way-mirror",
+  "canPlaceOnWalls": false,
+  "canPlaceOnSurfaces": true,
+  "backgroundTiles": 0,
+  "members": [
+    {
+      "type": "asset",
+      "id": "PRINTER",
+      "file": "PRINTER.png",
+      "width": 16,
+      "height": 16,
+      "footprintW": 1,
+      "footprintH": 1,
+      "orientation": "front"
+    },
+    {
+      "type": "asset",
+      "id": "PRINTER_BACK",
+      "file": "PRINTER_BACK.png",
+      "width": 16,
+      "height": 16,
+      "footprintW": 1,
+      "footprintH": 1,
+      "orientation": "back"
+    },
+    {
+      "type": "asset",
+      "id": "PRINTER_SIDE",
+      "file": "PRINTER_SIDE.png",
+      "width": 16,
+      "height": 16,
+      "footprintW": 1,
+      "footprintH": 1,
+      "orientation": "side",
+      "mirrorSide": true
+    }
+  ]
+}

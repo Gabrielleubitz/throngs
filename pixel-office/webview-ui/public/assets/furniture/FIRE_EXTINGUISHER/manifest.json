@@ -1,0 +1,13 @@
+{
+  "id": "FIRE_EXTINGUISHER",
+  "name": "Fire extinguisher",
+  "category": "wall",
+  "canPlaceOnWalls": true,
+  "canPlaceOnSurfaces": false,
+  "backgroundTiles": 0,
+  "type": "asset",
+  "width": 16,
+  "height": 16,
+  "footprintW": 1,
+  "footprintH": 1
+}

@@ -1,0 +1,44 @@
+{
+  "id": "LAPTOP",
+  "name": "Laptop",
+  "category": "electronics",
+  "type": "group",
+  "groupType": "rotation",
+  "rotationScheme": "3-way-mirror",
+  "canPlaceOnWalls": false,
+  "canPlaceOnSurfaces": true,
+  "backgroundTiles": 0,
+  "members": [
+    {
+      "type": "asset",
+      "id": "LAPTOP",
+      "file": "LAPTOP.png",
+      "width": 16,
+      "height": 16,
+      "footprintW": 1,
+      "footprintH": 1,
+      "orientation": "front"
+    },
+    {
+      "type": "asset",
+      "id": "LAPTOP_BACK",
+      "file": "LAPTOP_BACK.png",
+      "width": 16,
+      "height": 16,
+      "footprintW": 1,
+      "footprintH": 1,
+      "orientation": "back"
+    },
+    {
+      "type": "asset",
+      "id": "LAPTOP_SIDE",
+      "file": "LAPTOP_SIDE.png",
+      "width": 16,
+      "height": 16,
+      "footprintW": 1,
+      "footprintH": 1,
+      "orientation": "side",
+      "mirrorSide": true
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "FILING_CABINET",
+  "name": "Filing cabinet",
+  "category": "storage",
+  "type": "group",
+  "groupType": "rotation",
+  "rotationScheme": "3-way-mirror",
+  "canPlaceOnWalls": false,
+  "canPlaceOnSurfaces": false,
+  "backgroundTiles": 1,
+  "members": [
+    {
+      "type": "asset",
+      "id": "FILING_CABINET",
+      "file": "FILING_CABINET.png",
+      "width": 16,
+      "height": 32,
+      "footprintW": 1,
+      "footprintH": 2,
+      "orientation": "front"
+    },
+    {
+      "type": "asset",
+      "id": "FILING_CABINET_BACK",
+      "file": "FILING_CABINET_BACK.png",
+      "width": 16,
+      "height": 32,
+      "footprintW": 1,
+      "footprintH": 2,
+      "orientation": "back"
+    },
+    {
+      "type": "asset",
+      "id": "FILING_CABINET_SIDE",
+      "file": "FILING_CABINET_SIDE.png",
+      "width": 16,
+      "height": 32,
+      "footprintW": 1,
+      "footprintH": 2,
+      "orientation": "side",
+      "mirrorSide": true
+    }
+  ]
+}

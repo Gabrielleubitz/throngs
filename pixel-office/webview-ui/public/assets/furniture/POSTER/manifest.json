@@ -1,0 +1,13 @@
+{
+  "id": "POSTER",
+  "name": "Poster",
+  "category": "wall",
+  "canPlaceOnWalls": true,
+  "canPlaceOnSurfaces": false,
+  "backgroundTiles": 1,
+  "type": "asset",
+  "width": 16,
+  "height": 32,
+  "footprintW": 1,
+  "footprintH": 2
+}

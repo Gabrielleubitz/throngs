@@ -1,0 +1,44 @@
+{
+  "id": "FLOWERS",
+  "name": "Flower vase",
+  "category": "decor",
+  "type": "group",
+  "groupType": "rotation",
+  "rotationScheme": "3-way-mirror",
+  "canPlaceOnWalls": false,
+  "canPlaceOnSurfaces": true,
+  "backgroundTiles": 0,
+  "members": [
+    {
+      "type": "asset",
+      "id": "FLOWERS",
+      "file": "FLOWERS.png",
+      "width": 16,
+      "height": 16,
+      "footprintW": 1,
+      "footprintH": 1,
+      "orientation": "front"
+    },
+    {
+      "type": "asset",
+      "id": "FLOWERS_BACK",
+      "file": "FLOWERS_BACK.png",
+      "width": 16,
+      "height": 16,
+      "footprintW": 1,
+      "footprintH": 1,
+      "orientation": "back"
+    },
+    {
+      "type": "asset",
+      "id": "FLOWERS_SIDE",
+      "file": "FLOWERS_SIDE.png",
+      "width": 16,
+      "height": 16,
+      "footprintW": 1,
+      "footprintH": 1,
+      "orientation": "side",
+      "mirrorSide": true
+    }
+  ]
+}

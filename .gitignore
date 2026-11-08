@@ -1,0 +1,56 @@
+# runtime data — written by the office while it works, not source
+.pixel-office.log
+.cswap-auto.log
+.playwright-cli/
+.office-build.lock/
+lat.md/.cache/
+projects/
+project_inbox/
+standup/
+office/ideas/*.log
+office/ideas/*.status.json
+# the office app's build output and dependencies
+pixel-office/**/node_modules/
+pixel-office/dist/
+pixel-office/webview-ui/dist/
+office/uploads/
+office/watch/
+
+# secrets (ElevenLabs key etc.)
+.env
+office/integrations.json
+.pixel-office-app.log
+office/firebase-link.json
+office/onboarding/state.json
+
+# service-account keys
+*-key.json
+*-key.json.json
+*adminsdk*.json
+
+# personal runtime data / OS junk
+office/calls.json
+office/secretary.json
+office/devpulse.json
+office/telegram.json
+office/focus.json
+office/tunnel.json
+.DS_Store
+**/.DS_Store
+office/wellbeing.json
+office/awake.json
+office/jarvis.json
+office/clipboard.json
+office/shelf/
+
+# the office's own records (created on first run; never shared)
+office/errors.json
+office/learnings.json
+office/ideas.json
+office/ideas/
+office/onboarding/
+office/missed-calls.json
+office/departments/**/state.json
+.firebaserc
+tasks.md
+task_status.json

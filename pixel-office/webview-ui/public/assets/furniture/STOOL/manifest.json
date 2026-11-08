@@ -1,0 +1,44 @@
+{
+  "id": "STOOL",
+  "name": "Stool",
+  "category": "chairs",
+  "type": "group",
+  "groupType": "rotation",
+  "rotationScheme": "3-way-mirror",
+  "canPlaceOnWalls": false,
+  "canPlaceOnSurfaces": false,
+  "backgroundTiles": 0,
+  "members": [
+    {
+      "type": "asset",
+      "id": "STOOL",
+      "file": "STOOL.png",
+      "width": 16,
+      "height": 16,
+      "footprintW": 1,
+      "footprintH": 1,
+      "orientation": "front"
+    },
+    {
+      "type": "asset",
+      "id": "STOOL_BACK",
+      "file": "STOOL_BACK.png",
+      "width": 16,
+      "height": 16,
+      "footprintW": 1,
+      "footprintH": 1,
+      "orientation": "back"
+    },
+    {
+      "type": "asset",
+      "id": "STOOL_SIDE",
+      "file": "STOOL_SIDE.png",
+      "width": 16,
+      "height": 16,
+      "footprintW": 1,
+      "footprintH": 1,
+      "orientation": "side",
+      "mirrorSide": true
+    }
+  ]
+}

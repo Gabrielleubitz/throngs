@@ -1,0 +1,44 @@
+{
+  "id": "TREE_PLANT",
+  "name": "Big tree plant",
+  "category": "decor",
+  "type": "group",
+  "groupType": "rotation",
+  "rotationScheme": "3-way-mirror",
+  "canPlaceOnWalls": false,
+  "canPlaceOnSurfaces": false,
+  "backgroundTiles": 1,
+  "members": [
+    {
+      "type": "asset",
+      "id": "TREE_PLANT",
+      "file": "TREE_PLANT.png",
+      "width": 32,
+      "height": 32,
+      "footprintW": 2,
+      "footprintH": 2,
+      "orientation": "front"
+    },
+    {
+      "type": "asset",
+      "id": "TREE_PLANT_BACK",
+      "file": "TREE_PLANT_BACK.png",
+      "width": 32,
+      "height": 32,
+      "footprintW": 2,
+      "footprintH": 2,
+      "orientation": "back"
+    },
+    {
+      "type": "asset",
+      "id": "TREE_PLANT_SIDE",
+      "file": "TREE_PLANT_SIDE.png",
+      "width": 32,
+      "height": 32,
+      "footprintW": 2,
+      "footprintH": 2,
+      "orientation": "side",
+      "mirrorSide": true
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "hair": ["base", "short", "long", "ponytail", "bun", "curly", "mohawk", "bald"],
+  "outfit": ["base", "hoodie", "suit", "dress", "labcoat", "overalls", "tee"],
+  "hat": ["none", "cap", "beanie", "cowboy", "tophat", "headband", "party", "crown"],
+  "accessory": ["none", "glasses", "sunglasses", "headphones"],
+  "colors": {
+    "black": "#2b2430", "brown": "#6b4226", "auburn": "#9a3b26", "blonde": "#e3c068",
+    "white": "#f2f2f2", "gray": "#8a8f98", "red": "#d94a4a", "orange": "#e8913a",
+    "yellow": "#f0d54a", "green": "#4fae5b", "teal": "#3aa9a0", "blue": "#4a7fd9",
+    "navy": "#2c3e7a", "purple": "#8a5bd0", "pink": "#e879b0"
+  }
+}
