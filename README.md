@@ -87,6 +87,8 @@ cd throngs
 ./start.sh       # opens the office; first launch plays a short welcome tour
 ```
 
+The welcome tour ends with a **setup checklist** for your machine. It shows what's needed to run, what's recommended, and the optional features with what each one unlocks. Anything missing comes with the exact command and a Copy button. The list re-checks itself as you fix things. The same checklist is in the terminal: `node bin/sm.js doctor`.
+
 Then add a project and give the floor manager something to do:
 
 ```bash

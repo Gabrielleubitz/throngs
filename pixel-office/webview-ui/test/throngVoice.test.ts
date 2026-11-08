@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import { setCrew } from '../src/sm/crew.js';
 import type { StaffRecord } from '../src/sm/crew.js';
+import { setCrew } from '../src/sm/crew.js';
 import { throngVoice } from '../src/sm/throngVoice.js';
 
 const staff = (n: number): StaffRecord[] =>

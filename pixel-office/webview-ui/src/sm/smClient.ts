@@ -2,6 +2,10 @@
 import { serverToken } from '../transport/serverToken.js';
 import type { RoomRecord, StaffRecord } from './crew.js';
 
+/** One thing a new machine needs (bin/setup-check.js). */
+export interface SmSetupItem { group: 'required' | 'recommended' | 'optional'; id: string; label: string; ok: boolean; fix: string; cmd?: string; link?: string; unlocks?: string; action?: 'create-env' }
+export interface SmSetup { items: SmSetupItem[]; ready: boolean; required: { done: number; total: number } }
+
 export interface SmAsk {
   what: string;
   why?: string;
@@ -342,6 +346,10 @@ export const smClient = {
     clear: (id: string) => call<{ ok: boolean }>('/sm/integrations/clear', { method: 'POST', body: JSON.stringify({ id }) }),
   },
   voice: () => call<{ enabled: boolean }>('/sm/voice'),
+  setup: {
+    check: () => call<SmSetup>('/sm/setup'),
+    createEnv: () => call<SmSetup & { file: string }>('/sm/setup/env', { method: 'POST', body: '{}' }),
+  },
   onboarding: {
     status: () => call<{ done: boolean; doneAt: string | null; hasVideo: boolean }>('/sm/onboarding'),
     complete: () => call<{ done: boolean }>('/sm/onboarding/complete', { method: 'POST', body: '{}' }),

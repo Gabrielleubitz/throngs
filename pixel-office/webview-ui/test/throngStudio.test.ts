@@ -1,8 +1,8 @@
 import { describe, expect, it, vi } from 'vitest';
 
-import { setCrew } from '../src/sm/crew.js';
 import type { StaffRecord } from '../src/sm/crew.js';
-import { CHORDS, FORMATIONS, FORMATION_BARS, formationIndex, formationSpots, isMusicOn, studioPool, rateOf, semitones, setMusicOn, songBar, studioSpots, subscribeMusic } from '../src/sm/throngStudio.js';
+import { setCrew } from '../src/sm/crew.js';
+import { CHORDS, FORMATION_BARS, formationIndex, FORMATIONS, formationSpots, isMusicOn, rateOf, semitones, setMusicOn, songBar, studioPool, studioSpots, subscribeMusic } from '../src/sm/throngStudio.js';
 import { throngVoice } from '../src/sm/throngVoice.js';
 
 const staff = (n: number): StaffRecord[] =>

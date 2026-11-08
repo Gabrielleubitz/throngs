@@ -40,6 +40,7 @@ interface SmApi {
   integrations: { list(): unknown; save(b: unknown): unknown; clear(b: unknown): unknown; oauthStart(b: unknown): unknown; oauthCallback(q: unknown): Promise<{ id: string; name: string }> };
   firebase: { status(): unknown; link(key: unknown): unknown; unlink(): unknown; push(pass: string): Promise<unknown>; pull(pass: string): Promise<unknown> };
   onboarding: { status(): unknown; complete(): unknown; reset(): unknown; video(): { file: string; type: string; size: number } };
+  setup: { summary(): unknown; createEnv(): unknown };
   voice: { status(): unknown; speak(b: unknown): Promise<{ audio: Buffer; type: string }> };
   secretary: Record<string, (...a: never[]) => unknown>;
   phone: { serve(): unknown; status(): unknown; call(text: string, o?: { to?: string }): Promise<unknown> };
@@ -157,6 +158,7 @@ export function registerSmRoutes(
   });
   app.get('/sm/oauth/callback', async (req, reply) => {
     const page = (ok: boolean, msg: string) => reply.header('Content-Type', 'text/html; charset=utf-8').code(ok ? 200 : 400)
+      // eslint-disable-next-line pixel-agents/no-inline-colors -- a standalone page in a browser tab: the office's CSS tokens don't exist there
       .send(`<!doctype html><meta charset="utf-8"><title>Sign in</title><body style="font:16px monospace;background:#1e1e2e;color:#fff;padding:40px"><h2>${ok ? '✅' : '⚠️'} ${msg.replace(/[<&]/g, '')}</h2><p>You can close this tab and go back to the office.</p><script>try{window.opener&&window.opener.postMessage('sm-oauth','*')}catch(e){}${ok ? "setTimeout(()=>{if(window.opener)window.close();else{var r=sessionStorage.getItem('smReturn');if(r)location.href=r}},1500)" : ''}</script>`);
     try {
       const r = await api.integrations.oauthCallback(req.query);
@@ -168,6 +170,8 @@ export function registerSmRoutes(
   // First-run onboarding + Firebase backup
   app.get('/sm/onboarding', { preHandler: auth }, async (_req, reply) => run(reply, () => api.onboarding.status()));
   app.post('/sm/onboarding/complete', { preHandler: auth }, async (_req, reply) => run(reply, () => api.onboarding.complete()));
+  app.get('/sm/setup', { preHandler: auth }, async (_req, reply) => run(reply, () => api.setup.summary()));
+  app.post('/sm/setup/env', { preHandler: auth }, async (_req, reply) => run(reply, () => api.setup.createEnv()));
   app.post('/sm/onboarding/reset', { preHandler: auth }, async (_req, reply) => run(reply, () => api.onboarding.reset()));
   app.get('/sm/onboarding/video', { preHandler: auth }, async (_req, reply) => {
     try {

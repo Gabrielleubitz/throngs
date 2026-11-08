@@ -210,6 +210,7 @@ function createApi(sm) {
   secretary.previewBrief = () => ivyDay.brief();
   const firebase = require('./firebase.js').createFirebase(ROOT);
   const onboarding = require('./onboarding.js').createOnboarding(ROOT);
+  const setup = require('./setup-check.js').createSetupCheck(ROOT, { integrations }); // what this machine still needs (onboarding + sm doctor)
   const ideasApi = require('./ideas.js').createIdeas(ROOT);
   const meetingsApi = require('./meetings.js').createMeetings((name) => loadProject(name).dir);
   const ACTIVE = ['queued', 'planning', 'working', 'checking', 'paused', 'waiting_human', 'reviewing'];
@@ -684,7 +685,7 @@ function createApi(sm) {
     meet: (b = {}) => google.createMeeting({ title: b.title, start: b.start, minutes: b.minutes, attendees: String(b.attendees || '').split(/[,\s;]+/).filter(Boolean), description: b.description, notify: true }),
     linked: () => ({ linked: google.linked() }),
   };
-  return { calendar, google, AGENTS, voice, phone, secretary, devpulse, ivyDay, wellbeing, glance, toolbelt, telegram, ivyTelegram, focus, firebase, onboarding, integrations, meetings, accounts, watch, errorlog, learning, standup, projects, officeBusy, health: healthBoard, state, diff, audit, fix, human, setAsk, mission, ideas, folders, addProject, staff, setAccess };
+  return { calendar, google, AGENTS, voice, phone, secretary, devpulse, ivyDay, wellbeing, glance, toolbelt, telegram, ivyTelegram, focus, firebase, onboarding, setup, integrations, meetings, accounts, watch, errorlog, learning, standup, projects, officeBusy, health: healthBoard, state, diff, audit, fix, human, setAsk, mission, ideas, folders, addProject, staff, setAccess };
 }
 
 module.exports = { createApi, parseAskNotes, isReviewTask, AGENTS };

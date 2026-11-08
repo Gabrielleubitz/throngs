@@ -1360,19 +1360,15 @@ const commands = {
 
   // Install check: everything a new machine needs, with the exact fix for anything missing.
   doctor() {
-    const { execSync } = require('child_process');
-    const has = (c) => { try { execSync(`command -v ${c}`, { stdio: 'ignore' }); return true; } catch { return false; } };
-    let failed = 0;
-    const row = (ok, label, fix, optional) => { console.log(`${ok ? '✅' : optional ? '⚪' : '❌'} ${label}${ok ? '' : `  → ${fix}`}`); if (!ok && !optional) failed++; };
-    row(Number(process.versions.node.split('.')[0]) >= 20, `Node ${process.versions.node} (need 20+)`, 'install Node 20+ from nodejs.org');
-    row(has('claude'), 'Claude Code CLI', 'npm i -g @anthropic-ai/claude-code, then run: claude (sign in once)');
-    row(has('git'), 'git', 'install git (xcode-select --install)');
-    row(fs.existsSync(path.join(ROOT, 'pixel-office', 'dist', 'cli.js')), 'office is built', 'run ./install.sh');
-    row(fs.existsSync(path.join(ROOT, '.env')), '.env (voice key)', 'cp .env.example .env and add ELEVENLABS_API_KEY', true);
-    row(has('ffmpeg'), 'ffmpeg (only for making videos)', 'brew install ffmpeg', true);
-    row(has('bd'), 'beads (bd) task tracker', 'optional: projects can use TASKS.md instead', true);
-    console.log(failed ? `\n${failed} problem(s) to fix first` : '\nAll set. Start the office with ./start.sh');
-    if (failed) process.exitCode = 1;
+    const S = require('./setup-check.js').createSetupCheck(ROOT).summary();
+    const title = { required: 'Needed to run', recommended: 'Recommended', optional: 'Optional features' };
+    for (const g of ['required', 'recommended', 'optional']) {
+      console.log(`\n${title[g]}`);
+      for (const i of S.items.filter((x) => x.group === g)) console.log(`  ${i.ok ? '✅' : g === 'required' ? '❌' : '⚪'} ${i.label}${i.ok ? '' : `  → ${i.fix}`}${!i.ok && i.unlocks ? `  (${i.unlocks})` : ''}`);
+    }
+    const left = S.required.total - S.required.done;
+    console.log(left ? `\n${left} thing(s) to fix before the crew can work.` : '\nAll set. Start the office with ./start.sh');
+    if (left) process.exitCode = 1;
   },
 
   // ElevenLabs narration for videos: REEL runs this, drops the mp3 into the Remotion project and plays it with <Audio>.
